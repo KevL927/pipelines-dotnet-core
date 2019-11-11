@@ -32,18 +32,18 @@ steps:
     projects: '**/*.csproj'
     arguments: '--configuration Release' # Update this to match your need
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: test
-    projects: '**/*Tests/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
+# - task: DotNetCoreCLI@2
+#   inputs:
+#     command: test
+#     projects: '**/*Tests/*.csproj'
+#     arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: test
-    projects: Refit.Tests/Refit.Tests.csproj
-    arguments: -c $(BuildConfiguration) --settings $(System.DefaultWorkingDirectory)/CodeCoverage.runsettings --collect:"XPlat Code Coverage" -- RunConfiguration.DisableAppDomain=true
-  displayName: Run Tests
+# - task: DotNetCoreCLI@2
+#   inputs:
+#     command: test
+#     projects: Refit.Tests/Refit.Tests.csproj
+#     arguments: -c $(BuildConfiguration) --settings $(System.DefaultWorkingDirectory)/CodeCoverage.runsettings --collect:"XPlat Code Coverage" -- RunConfiguration.DisableAppDomain=true
+#   displayName: Run Tests
 
 # - task: DotNetCoreCLI@2
 #   inputs:

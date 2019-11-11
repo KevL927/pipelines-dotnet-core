@@ -1,6 +1,6 @@
-variables:
-  serviceConnectionToAzure: AzureDevOps
-  appName: webappdevopspipeline
+# variables:
+#   serviceConnectionToAzure: AzureDevOps
+#   appName: webappdevopspipeline
 
 trigger:
 - master

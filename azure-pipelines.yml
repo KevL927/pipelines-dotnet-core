@@ -78,4 +78,4 @@ steps:
   inputs:
     azureSubscription: 'Azure DevOps Service Connection'
     appName: 'dotnethelloap'
-    package: $(System.ArtifactsDirectory)/**/*.zip    
+    package: $(System.ArtifactsDirectory)/**/*.zip

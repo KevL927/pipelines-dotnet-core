@@ -86,7 +86,7 @@ steps:
   inputs:
     webSiteName: 'Default website'
     #virtualApplication: # Optional
-    package: '$(System.DefaultWorkingDirectory)\**\*.zip'
+    package: '$(System.ArtifactsDirectory)\**\*.zip'
     #setParametersFile: # Optional
     #removeAdditionalFilesFlag: false # Optional
     #excludeFilesFromAppDataFlag: false # Optional

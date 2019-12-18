@@ -74,24 +74,8 @@ steps:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'helloApp'
 
-# - task: AzureWebApp@1
-#   inputs:
-#     azureSubscription: 'Azure DevOps Service Connection'
-#     appName: 'dotnethelloap'
-#     package: $(System.ArtifactsDirectory)/**/*.zip
-
-# IIS web app deploy
-# Deploy a website or web application using Web Deploy
-- task: IISWebAppDeploymentOnMachineGroup@0
+- task: AzureWebApp@1
   inputs:
-    webSiteName: 'Default website'
-    #virtualApplication: # Optional
-    package: '$(System.ArtifactsDirectory)\**\*.zip'
-    #setParametersFile: # Optional
-    #removeAdditionalFilesFlag: false # Optional
-    #excludeFilesFromAppDataFlag: false # Optional
-    #takeAppOfflineFlag: false # Optional
-    #additionalArguments: # Optional
-    #xmlTransformation: # Optional
-    #xmlVariableSubstitution: # Optional
-    #jSONFiles: # Optional
+    azureSubscription: 'Azure DevOps Service Connection'
+    appName: 'dotnethelloap'
+    package: $(System.ArtifactsDirectory)/**/*.zip

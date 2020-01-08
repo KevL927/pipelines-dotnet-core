@@ -74,8 +74,15 @@ steps:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'helloApp'
 
-- task: AzureWebApp@1
+# - task: AzureWebApp@1
+#   inputs:
+#     azureSubscription: 'Azure DevOps Service Connection'
+#     appName: 'dotnethelloap'
+#     package: $(System.ArtifactsDirectory)/**/*.zip
+
+- task: DotNetCoreCLI@2
   inputs:
-    azureSubscription: 'Azure DevOps Service Connection'
-    appName: 'dotnethelloap'
-    package: $(System.ArtifactsDirectory)/**/*.zip
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
